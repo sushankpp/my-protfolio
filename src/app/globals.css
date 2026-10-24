@@ -1,26 +1,102 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  html.dark *,
+  html:not(.dark) * {
+    transition-property: none;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-tag: var(--tag-bg);
+  --color-success: var(--success);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f7f3ea;
+  --foreground: #1f1a20;
+  --card: #fffdf8;
+  --card-foreground: #1f1a14;
+  --surface-2: #efe9dc;
+  --border: #e2daca;
+  --muted-foreground: #6e6455;
+  --primary: #c2761a;
+  --primary-hover: #a35f10;
+  --primary-foreground: #1f1a14;
+  --ring: #c2761a;
+  --tag-bg: #f0e8d8;
+  --arch-start: #f5b544;
+  --arch-end: #e8a33d;
+  --success: #15803d;
+  --muted: #efe9dc;
+  --secondary: #efe9dc;
+  --secondary-foreground: #1f1a14;
+  --accent: #efe9dc;
+  --accent-foreground: #1f1a14;
+  --popover: #fffdf8;
+  --popover-foreground: #1f1a14;
+  --input: #e2daca;
+  --destructive: #b42318;
+}
+
+.dark {
+  --background: #0a1020;
+  --foreground: #e8eef9;
+  --card: #111a2e;
+  --card-foreground: #e8eef9;
+  --surface-2: #16213a;
+  --border: #1e2a44;
+  --muted-foreground: #a3b0c8;
+  --primary: #f5b544;
+  --primary-hover: #ffc967;
+  --primary-foreground: #0a1020;
+  --ring: #f5b544;
+  --tag-bg: #16213a;
+  --arch-start: #f5b544;
+  --arch-end: #f5b544;
+  --success: #34d399;
+  --muted: #16213a;
+  --secondary: #16213a;
+  --secondary-foreground: #e8eef9;
+  --accent: #16213a;
+  --accent-foreground: #e8eef9;
+  --popover: #111a2e;
+  --popover-foreground: #e8eef9;
+  --input: #1e2a44;
+  --destructive: #f87171;
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }

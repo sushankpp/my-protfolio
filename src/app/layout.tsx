@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://my-protfolio-orcin-eight.vercel.app"
   ),
   title: {
-    default: "Sushank Pandey - Student, Developer and Researcher",
+    default: "Sushank Pandey | Student, Developer and Researcher",
     template: "%s | Sushank Pandey",
   },
   description: "Personal portfolio of Sushank Pandey: projects, research and writing.",

@@ -11,24 +11,26 @@ export async function Footer() {
   const currentYear = new Date().getFullYear();
   return (
     <footer>
-      <Container className="flex flex-col gap-4 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} Sushank Pandey. All rights reserved.
-        </p>
-        <nav className="flex items-center gap-3 text-sm text-muted-foreground">
-          {links.map((link, i) => (
-            <span key={link.label} className="flex items-center gap-3">
-              {i > 0 && <span aria-hidden="true">&middot;</span>}
-              <a
-                href={link.href}
-                {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
-                className="transition-colors hover:text-primary"
-              >
-                {link.label}
-              </a>
-            </span>
-          ))}
-        </nav>
+      <Container>
+        <div className="flex flex-col gap-4 border-t border-border py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">
+            &copy; {currentYear} Sushank Pandey. All rights reserved.
+          </p>
+          <nav className="flex items-center gap-3 text-sm text-muted-foreground">
+            {links.map((link, i) => (
+              <span key={link.label} className="flex items-center gap-3">
+                {i > 0 && <span aria-hidden="true">&middot;</span>}
+                <a
+                  href={link.href}
+                  {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                  className="transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              </span>
+            ))}
+          </nav>
+        </div>
       </Container>
     </footer>
   );

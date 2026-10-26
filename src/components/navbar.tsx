@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { navLinks } from "@/data/nav";
@@ -8,10 +9,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full bg-background/80 backdrop-blur">
       <Container>
-        <div className="grid h-20 grid-cols-[1fr_auto_1fr] items-center border-b border-border">
-          <Link href="/" className="text-lg font-semibold">
-            sp<span className="text-primary">.</span>
-          </Link>
+        <div className="flex h-20 items-center justify-between border-b border-border md:grid md:grid-cols-[1fr_auto_1fr]">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} />
 
           <nav className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) =>

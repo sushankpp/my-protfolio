@@ -10,7 +10,7 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu" onClick={() => setOpen(true)}>
+      <Button variant="ghost" size="icon" className="md:hidden cursor-pointer " aria-label="Open menu" onClick={() => setOpen(true)}>
         <Menu className="size-5" />
       </Button>
       <Sheet open={open} onOpenChange={setOpen}>

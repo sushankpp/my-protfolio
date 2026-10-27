@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     template: "%s | Sushank Pandey",
   },
   description: "Personal portfolio of Sushank Pandey: projects, research and writing.",
+  verification: {
+    google: "tdg4gmgZ3csVJ9hDGEG7PRxe5C6RCZWhLQ3w6TsS0ks",
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -33,7 +33,7 @@ const socialMeta: Record<
 
 export function Hero({ data = profile }: { data?: typeof profile }) {
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 md:pt-16 border border-b border-border">
+    <section className="relative overflow-hidden pt-12 pb-16 md:pt-16">
       <HeroBackground />
       <Container>
         <div className="flex justify-center">
@@ -99,7 +99,7 @@ export function Hero({ data = profile }: { data?: typeof profile }) {
                     <Icon className="size-4" />
                   </span>
                   <span className="min-w-0 text-left">
-                    <span className="flex items-center gap-1 text-sm font-medium">
+                    <span className="flex items-center gap-1 text-sm font-semibold">
                       {s.label}
                       <ArrowUpRight className="size-3 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                     </span>
@@ -113,13 +113,13 @@ export function Hero({ data = profile }: { data?: typeof profile }) {
           </div>
 
           <div className="mt-8 flex w-full items-center justify-center">
-            <Link
+            <a
               href={data.scrollTarget}
               aria-label="Scroll down"
               className="group rounded-full border border-border bg-background/60 p-3 shadow-lg shadow-primary/10 transition-all duration-300 hover:border-primary dark:shadow-black/10"
             >
               <ArrowDown className="mx-auto size-6 animate-bounce text-muted-foreground group-hover:text-primary" />
-            </Link>
+            </a>
           </div>
         </div>
       </Container>

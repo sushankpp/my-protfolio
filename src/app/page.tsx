@@ -1,10 +1,13 @@
+import About from "@/components/about";
 import { Hero } from "@/components/hero";
-import Image from "next/image";
+import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <About />
+      <Projects />
     </div>
   );
 }

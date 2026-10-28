@@ -35,7 +35,7 @@ export default function About({ data = about }: { data?: AboutData }) {
           </h2>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
             <h3 className="text-balance text-2xl font-semibold tracking-tight text-foreground md:text-[28px]">
               {data.heading}

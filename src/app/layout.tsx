@@ -6,20 +6,35 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://my-protfolio-orcin-eight.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      "https://my-protfolio-orcin-eight.vercel.app",
   ),
   title: {
     default: "Sushank Pandey | Student, Developer and Researcher",
     template: "%s | Sushank Pandey",
   },
-  description: "Personal portfolio of Sushank Pandey: projects, research and writing.",
+  description:
+    "Personal portfolio of Sushank Pandey: projects, research and writing.",
   verification: {
     google: "tdg4gmgZ3csVJ9hDGEG7PRxe5C6RCZWhLQ3w6TsS0ks",
-  }
+  },
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Sushank Pandey | Student, Developer and Researcher",
+    description:
+      "Personal portfolio of Sushank Pandey: projects, research and writing.",
+    url: "https://sushankpandey.com.np",
+    type: "website",
+    images: ["/sushank.jpeg"],
+  },
+  robots: { index:true, follow:true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

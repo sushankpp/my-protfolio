@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { type ComponentProps, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import { ProjectCard } from "./project-card";
 
-type Project = { slug: string; title: string; category: string };
+type Project = ComponentProps<typeof ProjectCard>["project"];
 
 export function ProjectFilters({ projects }: { projects: Project[] }) {
   const categories = [
@@ -41,9 +42,11 @@ export function ProjectFilters({ projects }: { projects: Project[] }) {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((p) => (
-          <div className="" key={p.slug}></div>
+          <div className="" key={p.slug}>
+            <ProjectCard project={p} />
+          </div>
         ))}
       </div>
     </>

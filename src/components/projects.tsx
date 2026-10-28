@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "./ui/container";
 import { projectData } from "@/data/project";
-import { ProjectFilters } from "./shared/project-filters";
+import { ProjectFilters } from "./projects/project-filters";
 
 export function Projects({
   data = projectData,

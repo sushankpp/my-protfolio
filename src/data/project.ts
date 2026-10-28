@@ -1,15 +1,22 @@
-export type ProjectCategory = "Web" | "Backend" | "Tools";
+export type ProjectCategory = "Web" | "Tools";
+export type ProjectStatus = "Live" | "Completed" | "In progress";
+
+export interface ProjectLink {
+  label: string;
+  href: string;
+  kind: "code" | "live";
+}
 
 export interface Project {
   slug: string;
   title: string;
   description: string;
   category: ProjectCategory;
+  status: ProjectStatus;
   tags: string[];
   year: number;
   image?: string;
-  liveUrl?: string;
-  repoUrl?: string;
+  links: ProjectLink[];
   featured?: boolean;
 }
 
@@ -31,57 +38,44 @@ export const projectData: ProjectSection = {
       description:
         "A streaming platform for Nepali films with adaptive bitrate video, a recommendation engine and content moderation.",
       category: "Web",
-      tags: ["Next.js", "TypeScript", "Go", "PostgreSQL"],
+      status: "Completed",
+      tags: ["Next.js", "Go Fiber", "PostgreSQL", "HLS"],
       year: 2026,
+      image: "",
       featured: true,
-      repoUrl: "https://github.com/sushankpp",
+      links: [
+        { label: "Frontend", href: "https://github.com/sushankpp/Cinematra-next", kind: "code" },
+        { label: "Backend", href: "https://github.com/sushankpp/Cinematra-Go", kind: "code" },
+      ],
     },
     {
-      slug: "portfolio-cms",
-      title: "Portfolio and CMS",
+      slug: "symphonia",
+      title: "Symphonia",
       description:
-        "This site: a personal portfolio with an admin panel for posts, projects and research papers.",
+        "A web app built with React, TypeScript and Vite, backed by its own separate API service.",
       category: "Web",
-      tags: ["Next.js", "Supabase", "Tailwind"],
-      year: 2026,
+      status: "Completed",
+      tags: ["React", "TypeScript", "Vite"],
+      year: 2025,
+      image: "",
       featured: true,
-      liveUrl: "https://sushankpandey.com.np",
+      links: [
+        { label: "Frontend", href: "https://github.com/sushankpp/Symphonia", kind: "code" },
+        { label: "Backend", href: "https://github.com/sushankpp/SymphoniaBackend", kind: "code" },
+      ],
     },
     {
-      slug: "task-api",
-      title: "Task Tracker API",
-      description:
-        "A REST API with auth, pagination and request validation. Demo entry, replace me.",
-      category: "Backend",
-      tags: ["Go", "Fiber", "PostgreSQL"],
-      year: 2025,
-    },
-    {
-      slug: "expense-splitter",
-      title: "Expense Splitter",
-      description:
-        "Split shared bills between friends and see who owes what. Demo entry, replace me.",
-      category: "Web",
-      tags: ["Next.js", "Supabase"],
-      year: 2025,
-    },
-    {
-      slug: "markdown-notes",
-      title: "Markdown Notes CLI",
-      description:
-        "A small command-line tool for keeping notes as markdown files. Demo entry, replace me.",
+      slug: "nepali-typing",
+      title: "Nepali Typing",
+      description: "A tool for typing in Nepali.",
       category: "Tools",
-      tags: ["Go"],
+      status: "Completed",
+      tags: ["Next.js", "TypeScript", "Vite"],
       year: 2025,
-    },
-    {
-      slug: "job-queue",
-      title: "Background Job Queue",
-      description:
-        "A worker service that retries failed jobs with backoff. Demo entry, replace me.",
-      category: "Backend",
-      tags: ["Go", "Redis"],
-      year: 2024,
+      image: "",
+      links: [
+        { label: "Source", href: "https://github.com/sushankpp/Nepali-typing", kind: "code" },
+      ],
     },
   ],
 };
